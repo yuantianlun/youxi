@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div class="youxichuan_box">
+<!--船-->
+<div class="chuan_box " style="">
+    <img id="chuan" src="images/chuangif.gif" alt="" style="width: 100%;">
+</div>
+<!--鼓-->
+<div class="gu_box" style="z-index: 1000;">
+    <img src="images/gu.png" alt="" id="gu" style="position: absolute;width: 100%;bottom: -20px; transition: all .1s">
+    <img id="chui" src="images/742710861993583007.png" alt="" style="width: 100%; position: absolute; bottom: 0; height: auto;">
+</div>
+<!--荷叶-->
+<div class="heyeleft1" style="width: 100%;position: absolute;left: 0; top: -200%; transition: all .5s; z-index: -1;">
+    <img src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: 1px;">
+</div>
+<!--<div class="heyeleft2" style="width: 60px;position: absolute;left: 0; top: -30%; transition: all .5s; z-index: -1;">-->
+    <!--<img src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: 1px;">-->
+<!--</div>-->
+
+<!--<div class="heyeright1" style="width: 95px;position: absolute;right: 0; top: 20%;transition: all .5s;z-index: -1;">-->
+    <!--<img src="images/heyeright1.png" alt="" style="position: absolute;width: 100%;right: 0 ; top: 1px;">-->
+<!--</div>-->
+<!--<div class="heyeright2" style="width: 95px;position: absolute;right: 0; top: -20%;transition: all .5s;z-index: -1;">-->
+    <!--<img src="images/heyeright1.png" alt="" style="position: absolute;width: 100%;right: 0 ; top: 1px;">-->
+<!--</div>-->
+    <!--进度条-->
+    <div class="jindu_box" style="width: 10px;height: 120px;background: rgba(0,0,0,0.8);position: absolute;top: 5%;left: 5%;">
+        <div class="jindu" style="width: 10px;height: 0;background: greenyellow;position: absolute;bottom: 0;"></div>
+        <div class="jindu_shuzi" style="position: absolute;right: -45px">0%</div>
+    </div>
+    <div class="zhongdian" style="width: 100%; height: 15px; background: rgba(0,0,0,0.6); position: absolute;top: -2%;transition: all .3s">
+        <div style="float: left;width: 45%; height: 3px;background: red; margin: 5.5px 0;"></div>
+        <div style="float: left;width: 10%;text-align: center;font-size: 12px;">终点线</div>
+        <div style="float: right;width: 45%; height: 3px;background: red; margin: 5.5px 0;"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var num=0;
+    var num1=0;
+    var num3=0;
+    var num4=0;
+    $(".gu_box").on("click",function () {
+        num++;
+        num1++;num1++;
+        var aa=num1;
+        // console.log(num);
+        var a=-200+num*2;
+        if (num===15){
+            num3=25;
+        }
+        if (num===30) {
+            num3=50;
+        }
+        if(num===45){
+            num3=75
+        }
+        if (num===60){
+            num3=100;
+            $(".youxichuan_box").remove();
+
+        }
+        if (num%2 ==0){
+            $("#chuan").attr('src','images/jianghou.png');
+            $(".heyeleft1").css("top",`${a}%`);
+            $("#gu").attr('src', 'images/gu.png');
+            // $("#gu").css('transform','scale(1.1,1.1)');
+            $("#chui").attr('src', 'images/chuiright.png');
+            $(".jindu").css("height",`${aa}px`);
+            num3++;
+        }else{
+            $("#chuan").attr('src','images/jiangqian.png');
+            $("#gu").attr('src', 'images/gu.png');
+            $("#chui").attr('src', 'images/chuileft.png');
+            num3++;num3++;
+
+        }
+        $(".jindu_shuzi").remove();
+        $(".jindu_box").append(`<div class="jindu_shuzi" style="position: absolute;right: -45px">${num3}%</div>`);
+        if (num3>65){
+            num4++;
+            $(".zhongdian").css("top",`${num4}%`)
+        }
+    })
+</script>
