@@ -6,3 +6,177 @@ html,body{
     padding: 0;
     overflow: hidden;
 }
+
+@keyframes liuxing1{
+    0% {
+        top: -20%;
+        right: 0;
+    }
+    100% {
+        top: 100%;
+        right: 100%;
+    }
+}
+@keyframes liuxing2{
+    0% {
+        top: 0;
+        right: 30%;
+    }
+    100% {
+        top: 90%;
+        right: 100%;
+    }
+}
+@keyframes liuxing3{
+    0% {
+        top: 0;
+        right: 10%;
+    }
+    100% {
+        top: 80%;
+        right: 100%;
+    }
+}
+@keyframes liuxing4{
+    0% {
+        top: 0;
+        right: 5%;
+    }
+    100% {
+        top: 50%;
+        right: 100%;
+    }
+}
+@keyframes liuxing5{
+    0% {
+        top: 0;
+        right: 15%;
+    }
+    100% {
+        top: 65%;
+        right: 100%;
+    }
+}
+@keyframes liuxing6{
+    0% {
+        top: 60%;
+        right: 25%;
+    }
+    100% {
+        top: 90%;
+        right: 100%;
+    }
+}
+@keyframes liuxing7{
+    0% {
+        top: -20%;
+        right: 25%;
+    }
+    100% {
+        top: 90%;
+        right: 100%;
+    }
+}
+@keyframes liuxing8{
+    0% {
+        top: -30%;
+        right: 25%;
+    }
+    100% {
+        top: 100%;
+        right: 100%;
+    }
+}
+@keyframes liuxing9{
+    0% {
+        top: 30%;
+        right: 25%;
+    }
+    100% {
+        top: 90%;
+        right: 100%;
+    }
+}
+@keyframes liuxing10{
+    0% {
+        top: 50%;
+        right: -25%;
+    }
+    100% {
+        top: 90%;
+        right: 100%;
+    }
+}
+.liuxing1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing1 8s linear infinite;
+}
+.liuxing2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing2 7.5s linear infinite;
+}
+.liuxing3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing3 7s linear infinite;
+}
+.liuxing4{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing4 6.6s linear infinite;
+}
+.liuxing5{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing5 6s linear infinite;
+}
+.liuxing6{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing6 8.5s linear infinite;
+}
+.liuxing7{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing7 12s linear infinite;
+}
+.liuxing8{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing8 15s linear infinite;
+}
+.liuxing9{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing9 10s linear infinite;
+}
+.liuxing10{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: liuxing10 11s linear infinite;
+}
+#liuxing img{
+    width: 100%;
+}

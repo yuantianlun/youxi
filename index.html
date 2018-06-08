@@ -21,20 +21,62 @@
     <img id="chui" src="images/805008421981821357.png" alt="" style="width: 100%; position: absolute; bottom: 0; height: auto;">
 </div>
 <!--荷叶-->
-<div class="heyeleft1" style="width: 100%;position: absolute;left: 0; top: 0; transition: all .5s; z-index: -1;">
+<div class="heyeleft1" style="width: 100%;position: absolute;left: 0; top: 0; transition: all .1s; z-index: -1;">
     <img class="heyeleftimg_1" src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top:-1400px; transition: all .5s;">
     <img class="heyeleftimg_2" src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: -2800px; transition: all .5s;">
 </div>
     <!--进度条-->
-    <div class="jindu_box" style="width: 10px;height: 120px;background: rgba(0,0,0,0.8);position: absolute;top: 5%;left: 5%;">
+    <div class="jindu_box" style="width: 10px;height: 120px;background: rgba(0, 0, 0, 0.7);position: absolute;top: 5%;left: 5%;">
         <div class="jindu" style="width: 10px;height: 0;background: greenyellow;position: absolute;bottom: 0;"></div>
         <div class="jindu_shuzi" style="position: absolute;right: -45px">0%</div>
     </div>
-    <div class="zhongdian" style="width: 100%; height: 15px; background: rgba(0,0,0,0.6); position: absolute;top: -2%;transition: all .3s">
+    <div class="zhongdian" style="width: 100%; height: 15px; background: rgba(205,205,205,0.4); position: absolute;top: -2%;transition: all .3s">
         <div style="float: left;width: 45%; height: 3px;background: red; margin: 5.5px 0;"></div>
         <div style="float: left;width: 10%;text-align: center;font-size: 12px;">终点线</div>
         <div style="float: right;width: 45%; height: 3px;background: red; margin: 5.5px 0;"></div>
     </div>
+
+    <!--树叶-->
+    <div id="liuxing" class="liuxing1" style="width: 50px; height: auto;">
+        <img src="images/yezi1.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing2" style="width: 35px; height: auto;">
+        <img src="images/yezi2.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing3" style="width: 40px; height: auto;">
+        <img src="images/yezi3.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing4" style="width: 38px; height: auto;">
+        <img src="images/yezi4.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing5" style="width: 30px; height: auto;">
+        <img src="images/yezi5.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing6" style="width: 45px; height: auto;">
+        <img src="images/yezi6.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing7" style="width: 45px; height: auto;">
+        <img src="images/yezi1.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing8" style="width: 45px; height: auto;">
+        <img src="images/yezi2.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing9" style="width: 45px; height: auto;">
+        <img src="images/yezi3.png" alt="">
+    </div>
+
+    <div id="liuxing" class="liuxing10" style="width: 45px; height: auto;">
+        <img src="images/yezi6.png" alt="">
+    </div>
+
 </div>
 </body>
 </html>
@@ -62,8 +104,7 @@
     var num5=0;
 
     var fn1=setInterval( function(){
-        num5++;num5++;num5++;
-        num5++;num5++;num5++;
+        num5++;num5++;num5++;num5++;num5++;num5++;
         var a=-1400+num5;
         var aaa=-2800+num5;
         $(".heyeleftimg_1").css("top",`${a}px`);
@@ -72,6 +113,7 @@
 
     $(".gu_box").on("click",function () {
         num++;
+        num5++;num5++;num5++;num5++;num5++;
         num1++;num1++;
         var aa=num1;
 
@@ -98,14 +140,14 @@
         }
         if (num%2 ==0){
             $("#chuan").attr('src','images/jianghou.png');
-            $("#gu").attr('src', 'images/gu.png');
+            // $("#gu").attr('src', 'images/gu.png');
             // $("#gu").css('transform','scale(1.1,1.1)');
             $("#chui").attr('src', 'images/chuiright.png');
             $(".jindu").css("height",`${aa}px`);
             num3++;
         }else{
             $("#chuan").attr('src','images/jiangqian.png');
-            $("#gu").attr('src', 'images/gu.png');
+            // $("#gu").attr('src', 'images/gu.png');
             $("#chui").attr('src', 'images/chuileft.png');
             num3++;num3++;
 
@@ -117,7 +159,14 @@
             $(".zhongdian").css("top",`${num4}%`)
         }
     })
+    $(".gu_box").on("touchstart",function(){
+        $("#gu").attr('src', 'images/gudong.png');
 
+    })
+    $(".gu_box").on("touchend",function(){
+        $("#gu").attr('src', 'images/gu.png');
+        $("#chuan").attr('src','images/chuangif.gif');
+    })
 
 
 </script>
