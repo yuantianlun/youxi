@@ -18,22 +18,13 @@
 <!--鼓-->
 <div class="gu_box" style="z-index: 1000;">
     <img src="images/gu.png" alt="" id="gu" style="position: absolute;width: 100%;bottom: -20px; transition: all .1s">
-    <img id="chui" src="images/742710861993583007.png" alt="" style="width: 100%; position: absolute; bottom: 0; height: auto;">
+    <img id="chui" src="images/805008421981821357.png" alt="" style="width: 100%; position: absolute; bottom: 0; height: auto;">
 </div>
 <!--荷叶-->
-<div class="heyeleft1" style="width: 100%;position: absolute;left: 0; top: -200%; transition: all .5s; z-index: -1;">
-    <img src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: 1px;">
+<div class="heyeleft1" style="width: 100%;position: absolute;left: 0; top: 0; transition: all .5s; z-index: -1;">
+    <img class="heyeleftimg_1" src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top:-1400px; transition: all .5s;">
+    <img class="heyeleftimg_2" src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: -2800px; transition: all .5s;">
 </div>
-<!--<div class="heyeleft2" style="width: 60px;position: absolute;left: 0; top: -30%; transition: all .5s; z-index: -1;">-->
-    <!--<img src="images/heyeleft1.png" alt=""style="width: 100%;position: absolute;left: 0; top: 1px;">-->
-<!--</div>-->
-
-<!--<div class="heyeright1" style="width: 95px;position: absolute;right: 0; top: 20%;transition: all .5s;z-index: -1;">-->
-    <!--<img src="images/heyeright1.png" alt="" style="position: absolute;width: 100%;right: 0 ; top: 1px;">-->
-<!--</div>-->
-<!--<div class="heyeright2" style="width: 95px;position: absolute;right: 0; top: -20%;transition: all .5s;z-index: -1;">-->
-    <!--<img src="images/heyeright1.png" alt="" style="position: absolute;width: 100%;right: 0 ; top: 1px;">-->
-<!--</div>-->
     <!--进度条-->
     <div class="jindu_box" style="width: 10px;height: 120px;background: rgba(0,0,0,0.8);position: absolute;top: 5%;left: 5%;">
         <div class="jindu" style="width: 10px;height: 0;background: greenyellow;position: absolute;bottom: 0;"></div>
@@ -48,16 +39,42 @@
 </body>
 </html>
 <script>
+    // var ms=0;
+    // var s=0;
+    //
+    // var time1=setInterval(function(){
+    //     ms++;
+    // },1);
+    // var time2=setInterval(function(){
+    //     s++;
+    // },1000);
+    var se,m=0,h=0,s=0,ss=0;
+
+
+
+    var time1=setInterval(function second() {
+        ss+=10;
+    },10);
     var num=0;
     var num1=0;
     var num3=0;
     var num4=0;
+    var num5=0;
+
+    var fn1=setInterval( function(){
+        num5++;num5++;num5++;
+        num5++;num5++;num5++;
+        var a=-1400+num5;
+        var aaa=-2800+num5;
+        $(".heyeleftimg_1").css("top",`${a}px`);
+        $(".heyeleftimg_2").css("top",`${aaa}px`);
+    },300);
+
     $(".gu_box").on("click",function () {
         num++;
         num1++;num1++;
         var aa=num1;
-        // console.log(num);
-        var a=-200+num*2;
+
         if (num===15){
             num3=25;
         }
@@ -69,12 +86,18 @@
         }
         if (num===60){
             num3=100;
+            clearInterval(fn1);
+            clearInterval(time1);
+            var t=ss/1000;
+            console.log(ss);
+            console.log(t);
             $(".youxichuan_box").remove();
-
+            function ajax1(){
+            //ajax
+            }
         }
         if (num%2 ==0){
             $("#chuan").attr('src','images/jianghou.png');
-            $(".heyeleft1").css("top",`${a}%`);
             $("#gu").attr('src', 'images/gu.png');
             // $("#gu").css('transform','scale(1.1,1.1)');
             $("#chui").attr('src', 'images/chuiright.png');
@@ -94,4 +117,7 @@
             $(".zhongdian").css("top",`${num4}%`)
         }
     })
+
+
+
 </script>
